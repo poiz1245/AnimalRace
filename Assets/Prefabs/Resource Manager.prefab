@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6692038504099460159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5027975440221503502}
+  - component: {fileID: 7499455557358471210}
+  m_Layer: 0
+  m_Name: Resource Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5027975440221503502
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6692038504099460159}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 666.1114, y: 671.3444, z: -1750.6681}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7499455557358471210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6692038504099460159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c5db30551053c844951fc0d879a0298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hudPrefab: {fileID: -1177113176607398483, guid: d90438890889b1c4d8f9f8824afa113f,
+    type: 3}
+  kartDefinitions:
+  - {fileID: 11400000, guid: 031f9c22994a2b84e9499c1ed67f3957, type: 2}
+  - {fileID: 11400000, guid: 477df50cdb6582a409bf879e627acf68, type: 2}
+  - {fileID: 11400000, guid: a662c088e0eb4b449bd4179c1010ca48, type: 2}
+  - {fileID: 11400000, guid: 4518db3aad0154d4aacc382d1fc20f2d, type: 2}
+  kartImage:
+  - {fileID: 8400000, guid: 87caccd9a0ce98e47baee6f5f34f4bf1, type: 2}
+  - {fileID: 8400000, guid: 6941f862947b4094f86ec3bbb6026c8e, type: 2}
+  - {fileID: 8400000, guid: 1da2c53b6b2ff3245b1a3fb126c6eb58, type: 2}
+  - {fileID: 8400000, guid: e83bb265f2acc584c823b3470683217f, type: 2}

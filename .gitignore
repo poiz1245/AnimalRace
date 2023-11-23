@@ -70,3 +70,13 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+/[Aa]ssets/Bakery
+/[Aa]ssets/[Ee]ditor/x64/[Bb]akery/cudnn64_7.dll
+/[Aa]ssets/Toon Fantasy Nature/Scenes/Demo_Scene_Field.unity
+/[Aa]ssets/Toon Fantasy Nature/Scenes/Demo_Scene_Lake_1.unity
+/[Aa]ssets/Toon Fantasy Nature/Scenes/Demo_Scene_Lake_2.unity
+/[Aa]ssets/Toon Fantasy Nature/Scenes/Demo_Scene_Lake_3.unity
+/[Aa]ssets/Toon Fantasy Nature/Scenes/Demo_Scene_Pines_1.unity
+/[Aa]ssets/Toon Fantasy Nature/Terrain/TFF_Terrain_Grass_1A_D.tif
+/[Aa]ssets/Toon Fantasy Nature/Terrain/TFF_Terrain_Sand_1A_D.tif
