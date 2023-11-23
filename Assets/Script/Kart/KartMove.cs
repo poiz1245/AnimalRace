@@ -71,14 +71,10 @@ public class KartMove : NetworkBehaviour
     }
     public override void FixedUpdateNetwork()
     {
-        
-
         NetworkInputData input = Buttonssetting();
 
         transform.Rotate(0, input.yaw * normalRotationSpeed * Runner.DeltaTime, 0);
 
-        /* + transform.right * inputDir.x*/
-        ;
 
         if (kartLapController.isFinish == false)
         {
@@ -132,14 +128,9 @@ public class KartMove : NetworkBehaviour
         }
         else
         {
-            curMoveSpeed = Mathf.Lerp(curMoveSpeed, 0, 0.5f * Runner.DeltaTime) ;
-            rigid.velocity = new Vector3(transform.forward.x * curMoveSpeed* Runner.DeltaTime, rigid.velocity.y, transform.forward.z * curMoveSpeed * Runner.DeltaTime);
+            curMoveSpeed = Mathf.Lerp(curMoveSpeed, 0, 0.5f * Runner.DeltaTime);
+            rigid.velocity = new Vector3(transform.forward.x * curMoveSpeed * Runner.DeltaTime, rigid.velocity.y, transform.forward.z * curMoveSpeed * Runner.DeltaTime);
         }
-
-
-
-        //transform.rotation = Quaternion.Euler(0, (float)input.yaw, 0);
-
     }
     void Drift()
     {

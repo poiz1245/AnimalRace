@@ -20,6 +20,7 @@ public class LobbyUI : MonoBehaviour, IDisabledUI
 
     static readonly Dictionary<RoomPlayer, LobbyItemUI> ListItems = new Dictionary<RoomPlayer, LobbyItemUI>();
     static bool IsSubscribed;
+
     private void Awake()
     {
         RoomPlayer.PlayerChanged += (player) =>
@@ -31,16 +32,6 @@ public class LobbyUI : MonoBehaviour, IDisabledUI
     void Start()
     {
         sessionName.text = $"Room Name : {ServerInfo.LobbyName}";
-    }
-
-    void UpdateDetails()
-    {
-
-    }
-
-    public void OnDestruction()
-    {
-
     }
     public void Setup()
     {
@@ -82,8 +73,6 @@ public class LobbyUI : MonoBehaviour, IDisabledUI
         obj.SetPlayer(player);
 
         ListItems.Add(player, obj);
-
-        //UpdateDetails(GameManager.Instance);
     }
 
     void RemovePlayer(RoomPlayer player)
@@ -123,4 +112,9 @@ public class LobbyUI : MonoBehaviour, IDisabledUI
     }
 
     static bool IsAllReady() => RoomPlayer.Players.Count > 0 && RoomPlayer.Players.All(player => player.IsReady);
+
+    public void OnDestruction()
+    {
+        throw new System.NotImplementedException();
+    }
 }

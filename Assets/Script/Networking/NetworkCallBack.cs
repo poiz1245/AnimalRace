@@ -34,28 +34,8 @@ public class NetworkCallBack : MonoBehaviour, INetworkRunnerCallbacks
 
     void Update()
     {
-        //yaw += Input.GetAxis("Horizontal");
         yaw = Input.GetAxis("Horizontal");
     }
-    /*public float Yaw
-    {
-        get
-        {
-            return yaw;
-        }
-        set
-        {
-            yaw = value;
-            if (yaw < 0)
-            {
-                yaw = 360f;
-            }
-            if (yaw > 360)
-            {
-                yaw = 0;
-            }
-        }
-    }*/
     private void Awake()
     {
         if (NC == null)
@@ -81,7 +61,6 @@ public class NetworkCallBack : MonoBehaviour, INetworkRunnerCallbacks
 
     public void LoadTrack()
     {
-        //UIScreen.Focus(dummyScreen);
         LevelManager.Instance.LoadTrack(2);
     }
 
