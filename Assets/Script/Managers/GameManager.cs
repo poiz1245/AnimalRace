@@ -49,11 +49,9 @@ public class GameManager : NetworkBehaviour
 
     public override void FixedUpdateNetwork()
     {
-        print(userName);
         if (isFinish)
         {
             endingPanel.SetActive(true);
-            //winnerName.text = userName;
         }
     }
 
