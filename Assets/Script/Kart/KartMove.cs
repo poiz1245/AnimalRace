@@ -210,7 +210,7 @@ public class KartMove : NetworkBehaviour
     [Rpc(sources: RpcSources.InputAuthority, targets: RpcTargets.StateAuthority)] //sources는 InputAuthority권한을 가지고 있는 사람, target은 StateAuthority권한을 가지고 있는 사람에게 RPC보냄
     public void RPC_SendNickName(NetworkString<_16> message)
     {
-        winnerName = message;
+        NickName = message;
     }
 
     public static void OnWinnerNameChanged(Changed<KartMove> changed)
