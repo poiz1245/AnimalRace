@@ -10,7 +10,7 @@ using UnityEngine;
 public class GameManager : NetworkBehaviour
 {
     [SerializeField] GameObject endingPanel;
-    [SerializeField] TextMeshProUGUI winnerName;
+    [SerializeField] public TextMeshProUGUI winnerName;
 
     public GameObject[] checkPoints;
     public Transform[] spawnPoints;
@@ -53,7 +53,7 @@ public class GameManager : NetworkBehaviour
         if (isFinish)
         {
             endingPanel.SetActive(true);
-            winnerName.text = userName;
+            //winnerName.text = userName;
         }
     }
 

@@ -79,7 +79,7 @@ public class KartLapController : NetworkBehaviour
 
         if (lapIndex >= 1)
         {
-            //isFinish = true;
+            isFinish = true;
             CheckPlayerStatus(true);
             SetTotalRaceTime(startRaceTick);
         }

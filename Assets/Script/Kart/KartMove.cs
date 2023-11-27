@@ -18,7 +18,6 @@ public class KartMove : NetworkBehaviour
     [SerializeField]
     private CinemachineVirtualCamera VC;
 
-
     public GameUI hud;
     [SerializeField] NetworkMecanimAnimator nma;
     [SerializeField] Animator anim;
@@ -38,7 +37,8 @@ public class KartMove : NetworkBehaviour
     [Networked(OnChanged = nameof(OnNickNameChanged))]
     public NetworkString<_16> NickName { get; set; }
 
-
+    [Networked(OnChanged = nameof(OnWinnerNameChanged))]
+    public NetworkString<_16> winnerName { get; set; }
 
     public float InterpolatedSpeed => speedInterpolator.Value;
 
@@ -71,6 +71,10 @@ public class KartMove : NetworkBehaviour
     }
     public override void FixedUpdateNetwork()
     {
+        if (kartLapController.isFinish)
+        {
+            RPC_SendwinnerName(NickName);
+        }
         NetworkInputData input = Buttonssetting();
 
         transform.Rotate(0, input.yaw * normalRotationSpeed * Runner.DeltaTime, 0);
@@ -206,6 +210,23 @@ public class KartMove : NetworkBehaviour
     [Rpc(sources: RpcSources.InputAuthority, targets: RpcTargets.StateAuthority)] //sources는 InputAuthority권한을 가지고 있는 사람, target은 StateAuthority권한을 가지고 있는 사람에게 RPC보냄
     public void RPC_SendNickName(NetworkString<_16> message)
     {
-        NickName = message;
+        winnerName = message;
     }
+
+    public static void OnWinnerNameChanged(Changed<KartMove> changed)
+    {
+        changed.Behaviour.SetWinnerName();
+    }
+    public void SetWinnerName()
+    {
+        GameManager.Instance.winnerName.text = winnerName.Value;
+        print(winnerName.Value);
+    }
+
+    [Rpc(sources: RpcSources.InputAuthority, targets: RpcTargets.StateAuthority)] //sources는 InputAuthority권한을 가지고 있는 사람, target은 StateAuthority권한을 가지고 있는 사람에게 RPC보냄
+    public void RPC_SendwinnerName(NetworkString<_16> message)
+    {
+        winnerName = message;
+    }
+
 }
